@@ -7,7 +7,7 @@ Ext.define('App.view.Form1', {
 	height: 170,
 	width: 360,
 	layout: {
-		type: 'fit'
+		type: 'vbox'
 	},
 	title: 'Form 1',
 	
