@@ -1,6 +1,7 @@
 Ext.define('App.store.CustomerStore', {
 	extend: 'Ext.data.JsonStore',
 	model: 'App.model.CustomerModel',
+  storeId: 'customer',
   autoLoad: true,
   proxy: {
     type: 'ajax',
@@ -9,4 +10,4 @@ Ext.define('App.store.CustomerStore', {
       type: 'json'
     }
   }
-});	
+});

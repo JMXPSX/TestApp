@@ -6,7 +6,7 @@ Ext.define('App.view.Viewport', {
   ],
   style: 'padding: 25px;',
   layout: 'vbox',
-
+  
   items: [{
     xtype: 'form',
     title: 'Web Application',
@@ -15,37 +15,48 @@ Ext.define('App.view.Viewport', {
     items: [
     {
       xtype: 'combo',
-      id: 'options-combo',
+      name: 'customer-name',
+      id: 'customer-name',
+      fieldLabel: 'Name',
+      width: '100%',
       store: 'CustomerStore',
       displayField: 'name',
-      valueField: 'id',
-      multiSelect: false,
-      fieldLabel: 'Name',
       emptyText: 'Select a customer',
-      selectOnFocus: false,
-      width: '100%'
-    },
-    {
-      xtype: 'textareafield',
-      grow: false,
-      fieldLabel: 'Address',
-      width: '100%',
-      name: 'address',
-      allowBlank: false               
+      editable: false,
+      reference: 'customeree',
+      listeners: {
+        change: function(combobox, selected) {
+          this.findParentByType('form').loadRecord(this.getSelection());
+        }
+      }
     },
     {
       xtype: 'textfield',
-      name: 'phone',
-      fieldLabel: 'Phone',
+      name: 'company',
+      id: 'customer-company',
+      fieldLabel: 'Company',
       width: '100%',
-      allowBlank: false  
     },
     {
       xtype: 'textfield',
       name: 'email',
+      id: 'customer-email',
       fieldLabel: 'E-mail',
+      width: '100%'
+    },
+    {
+      xtype: 'textfield',
+      name: 'phone',
+      id: 'customer-phone',
+      fieldLabel: 'Phone',
       width: '100%',
-      allowBlank: false  
+    },
+    {
+      xtype: 'textfield',
+      name: 'mobile',
+      id: 'customer-mobile',
+      fieldLabel: 'Mobile',
+      width: '100%'
     }]
   }]            
 });
