@@ -25,9 +25,7 @@ Ext.define('App.view.Viewport', {
       editable: false,
       reference: 'customeree',
       listeners: {
-        change: function(combobox, selected) {
-          this.findParentByType('form').loadRecord(this.getSelection());
-        }
+        change: 'onChangeCustomer'
       }
     },
     {
