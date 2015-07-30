@@ -1,5 +1,5 @@
 Ext.define('App.view.Viewport', {
-	extend: 'Ext.container.Viewport',
+	extend: 'Ext.form.Panel',
 	controller: 'form-xml',
 	requires: [
 		'Ext.form.FormPanel',

@@ -4,7 +4,7 @@ Ext.define('App.view.ViewportController', {
 
 	onLoadClick: function() {
 		console.log('xml click');
-		this.getView().getForm().Load({
+		this.getView().getForm().load({
 
 			url: 'resources/data/form/xml-form-data.xml',
 			waitMsg: 'Loading...'
