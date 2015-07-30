@@ -2,12 +2,9 @@ Ext.define('App.view.ViewportController', {
 	extend: 'Ext.app.ViewController',
 	alias: 'controller.form-xml',
 
-	onLoadClick: function() {
-		console.log('xml click');
+	onChangeCustomer: function() {
 		this.getView().getForm().load({
-
-			url: 'resources/data/form/xml-form-data.xml',
-			waitMsg: 'Loading...'
+			
 		});
 	}
 
