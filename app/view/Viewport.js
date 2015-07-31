@@ -1,6 +1,6 @@
 Ext.define('App.view.Viewport', {
   extend: 'Ext.container.Viewport',
-  controller: 'form-xml',
+  controller: 'CustomerFormCtrl',
   requires: [
     'App.view.ViewportController'
   ],
@@ -56,6 +56,10 @@ Ext.define('App.view.Viewport', {
       fieldLabel: 'Mobile',
       width: '100%',
       allowBlank: false
+    },
+    {
+      xtype: 'hiddenfield',
+      name: 'id'
     }],
     dockedItems: [
       {

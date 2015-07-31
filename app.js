@@ -1,4 +1,4 @@
-﻿Ext.application({
+Ext.application({
     name: 'App',
     models: ['CustomerModel'],
     stores: ['CustomerStore'],

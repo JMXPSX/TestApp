@@ -27,13 +27,34 @@
 
   $customer = array();
 
-  /*
-  $customer = array(
-    new Customer(1, 'Tom Cruise', 'Top Gun', 'tom@gmail.com', '111-111-1111', '222-222-2222'),
-    new Customer(2, 'Bruce Willis', 'Nakatomi Plaza', 'bruce@google.com', '333-333-3333', '444-444-4444')
-  );
-  */
 
+  // -- AJAX -- form
+  if($_POST) {
+    if($_POST['id']) {
+      $fields = '';
+      foreach ($_POST as $key => $value) {
+        if($key == 'id') continue;
+        $fields .= ", `{$key}`='{$value}'";
+      }
+      $fields = substr($fields, 2);
+      mysql_query("UPDATE `customer` SET {$fields} WHERE `cid` = {$_POST['id']}");
+    } else {
+      mysql_query("INSERT INTO `customer` (`name`, `company`, `email`, `phone`, `mobile`) VALUES ('{$_POST['name']}', '{$_POST['company']}', '{$_POST['email']}', '{$_POST['phone']}', '{$_POST['mobile']}')");
+    }
+
+    echo json_encode(array('success' => true, 'data' => array()));
+  } else {
+    $results = mysql_query('SELECT * FROM `customer`');
+    $tblCnt = 0;
+    while($result = mysql_fetch_array($results)) {
+      $tblCnt++;
+      $customer[] = new Customer($result['cid'], $result['name'], $result['company'], $result['email'], $result['phone'], $result['mobile']);
+    }
+    echo json_encode($customer);
+  }
+
+  // -- AJAX -- multipart
+  /*
   $post = file_get_contents('php://input');
   if($post) {
     $data = json_decode($post, true);
@@ -55,8 +76,11 @@
       $tblCnt++;
       $customer[] = new Customer($result['cid'], $result['name'], $result['company'], $result['email'], $result['phone'], $result['mobile']);
     }
+
+    echo json_encode($customer);
   }
+  */
   
-  echo json_encode($customer);
+  
 
 ?>
