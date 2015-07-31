@@ -15,6 +15,7 @@
       $this->phone    = $phone;
       $this->mobile   = $mobile;
     }
+
   };
 
   $customer = array(
@@ -22,5 +23,14 @@
     new Customer(2, 'Bruce Willis', 'Nakatomi Plaza', 'bruce@google.com', '333-333-3333', '444-444-4444')
   );
 
+  $post = file_get_contents('php://input');
+  if($post) {
+    $data = json_decode($post, true);
+    foreach ($data as $key => $value) {
+      $customer[$data['id'] - 1]->$key = $value;
+    }
+  }
+  
   echo json_encode($customer);
+
 ?>

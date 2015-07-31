@@ -9,20 +9,21 @@ Ext.define('App.view.Viewport', {
   
   items: [{
     xtype: 'form',
+    url: '/resources/customer.php',
     title: 'Web Application',
     width: 500,      
     bodyPadding: 10,
     items: [
     {
       xtype: 'combo',
-      name: 'customer-name',
-      id: 'customer-name',
+      name: 'name',
       fieldLabel: 'Name',
       width: '100%',
       store: 'CustomerStore',
       displayField: 'name',
       emptyText: 'Select a customer',
       editable: false,
+      multiSelect: false,
       reference: 'customeree',
       listeners: {
         change: 'onChangeCustomer'
@@ -31,28 +32,24 @@ Ext.define('App.view.Viewport', {
     {
       xtype: 'textfield',
       name: 'company',
-      id: 'customer-company',
       fieldLabel: 'Company',
       width: '100%',
     },
     {
       xtype: 'textfield',
       name: 'email',
-      id: 'customer-email',
       fieldLabel: 'E-mail',
       width: '100%'
     },
     {
       xtype: 'textfield',
       name: 'phone',
-      id: 'customer-phone',
       fieldLabel: 'Phone',
       width: '100%',
     },
     {
       xtype: 'textfield',
       name: 'mobile',
-      id: 'customer-mobile',
       fieldLabel: 'Mobile',
       width: '100%'
     }],

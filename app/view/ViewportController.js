@@ -7,13 +7,25 @@ Ext.define('App.view.ViewportController', {
   },
 
   onSaveCustomer: function(button) {
+    //Ext.getStore("CustomerStore").setModel(button.up('form').getValues());
+
+    var iForm         = button.up('form'),
+        iRecord       = iForm.getRecord(),
+        iValues       = iForm.getValues();
+    iRecord.set (iValues); 
+
+    /*
     button.up('form').submit({
       success: function(form, action) {
+        button.up('form').load();
+        button.up('form').updateRecord();
         Ext.Msg.alert('Success', 'Woo hoo!');
       },
       failure: function(form, action) {
+        console.log(action);
         Ext.Msg.alert('Failed', 'Something wrong.');
       }
     });
+    */
   }
 });

@@ -3,6 +3,7 @@ Ext.define('App.store.CustomerStore', {
 	model: 'App.model.CustomerModel',
   storeId: 'customer',
   autoLoad: true,
+  autoSync: true,
   proxy: {
     type: 'ajax',
     url: 'resources/customer.php',
