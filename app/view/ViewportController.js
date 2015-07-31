@@ -3,6 +3,10 @@ Ext.define('App.view.ViewportController', {
 	alias: 'controller.form-xml',
 
 	onChangeCustomer: function(combobox, selected) {
-    combobox.up('form').loadRecord(combobox.getSelection());
-  }
+    	combobox.up('form').loadRecord(combobox.getSelection());
+  	},
+
+  	onButtonClickSubmit: function(form, action) {
+  		console.log('submit');
+    }
 });

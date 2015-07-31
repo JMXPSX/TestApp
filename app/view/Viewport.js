@@ -55,6 +55,24 @@ Ext.define('App.view.Viewport', {
       id: 'customer-mobile',
       fieldLabel: 'Mobile',
       width: '100%'
-    }]
+    }],
+    dockedItems: [
+      {
+        xtype: 'toolbar',
+        dock: 'bottom',
+      items: [
+        {
+          xtype: 'tbfill'
+        },
+        {
+          xtype: 'button',
+          formBind: true,      
+          text: 'Submit',
+          listeners: {
+            click: 'onButtonClickSubmit'
+          }
+        }]
+
+      }]
   }]            
 });
