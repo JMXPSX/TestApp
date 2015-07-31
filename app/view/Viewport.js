@@ -60,7 +60,7 @@ Ext.define('App.view.Viewport', {
       {
         xtype: 'toolbar',
         dock: 'bottom',
-      items: [
+        items: [
         {
           xtype: 'tbfill'
         },
@@ -69,7 +69,7 @@ Ext.define('App.view.Viewport', {
           formBind: true,      
           text: 'Submit',
           listeners: {
-            click: 'onButtonClickSubmit'
+            click: 'onSaveCustomer'
           }
         }]
 

@@ -1,12 +1,19 @@
 Ext.define('App.view.ViewportController', {
-	extend: 'Ext.app.ViewController',
-	alias: 'controller.form-xml',
+  extend: 'Ext.app.ViewController',
+  alias: 'controller.form-xml',
 
-	onChangeCustomer: function(combobox, selected) {
-    	combobox.up('form').loadRecord(combobox.getSelection());
-  	},
+  onChangeCustomer: function(combobox) {
+    combobox.up('form').loadRecord(combobox.getSelection());
+  },
 
-  	onButtonClickSubmit: function(form, action) {
-  		console.log('submit');
-    }
+  onSaveCustomer: function(button) {
+    button.up('form').submit({
+      success: function(form, action) {
+        Ext.Msg.alert('Success', 'Woo hoo!');
+      },
+      failure: function(form, action) {
+        Ext.Msg.alert('Failed', 'Something wrong.');
+      }
+    });
+  }
 });
