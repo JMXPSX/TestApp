@@ -19,10 +19,10 @@ Ext.define('App.view.Viewport', {
       name: 'name',
       fieldLabel: 'Name',
       width: '100%',
+      allowBlank: false,
       store: 'CustomerStore',
       displayField: 'name',
-      emptyText: 'Select a customer',
-      editable: false,
+      emptyText: 'Select a customer or Enter a new customer name',
       multiSelect: false,
       reference: 'customeree',
       listeners: {
@@ -34,24 +34,28 @@ Ext.define('App.view.Viewport', {
       name: 'company',
       fieldLabel: 'Company',
       width: '100%',
+      allowBlank: false
     },
     {
       xtype: 'textfield',
       name: 'email',
       fieldLabel: 'E-mail',
-      width: '100%'
+      width: '100%',
+      allowBlank: false
     },
     {
       xtype: 'textfield',
       name: 'phone',
       fieldLabel: 'Phone',
       width: '100%',
+      allowBlank: false
     },
     {
       xtype: 'textfield',
       name: 'mobile',
       fieldLabel: 'Mobile',
-      width: '100%'
+      width: '100%',
+      allowBlank: false
     }],
     dockedItems: [
       {
