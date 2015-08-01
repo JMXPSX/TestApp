@@ -9,7 +9,7 @@ Ext.define('App.view.Viewport', {
   
   items: [{
     xtype: 'form',
-    url: '/resources/customer.php',
+    url: '/TestApp/resources/customer.php', // Added /TestApp because it cant see the customer.php on my end
     title: 'Web Application',
     width: 500,      
     bodyPadding: 10,
@@ -68,6 +68,13 @@ Ext.define('App.view.Viewport', {
         items: [
         {
           xtype: 'tbfill'
+        },
+        {
+          xtype: 'button',
+          text: 'Delete',
+          listeners: {
+            click: 'onDeleteCustomer'
+          }
         },
         {
           xtype: 'button',
