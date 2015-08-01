@@ -15,6 +15,9 @@ Ext.define('App.view.ViewportController', {
         if(record){
           Ext.Msg.alert('Delete', 'Customer ID ' + record.get('id'));
           // Refer to getStore of CustomerStore but with delete action trigger
+
+          record.drop('id');
+
         }else{
           Ext.Msg.alert('Success', 'No Customer selected');
         }
