@@ -9,7 +9,7 @@ Ext.define('App.view.Viewport', {
   
   items: [{
     xtype: 'form',
-    url: '/TestApp/resources/customer.php', // Added /TestApp because it cant see the customer.php on my end
+    url: '/resources/customer.php',
     title: 'Web Application',
     width: 500,      
     bodyPadding: 10,

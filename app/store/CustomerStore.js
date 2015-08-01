@@ -6,11 +6,11 @@ Ext.define('App.store.CustomerStore', {
   autoSync: true,
   proxy: {
     type: 'ajax',
-    url: '/TestApp/resources/customer.php', // Added /TestApp because it cant see the customer.php on my end
+    url: '/resources/customer.php',
     api: {
-      create: 'customer.php?action=create',      
-      update: 'customer.php?action=update',
-      destroy: 'customer.php?action=destroy' // this is what I want to trigger for the delete, Phan
+      create:   '/resources/customer.php?action=create',      
+      update:   '/resources/customer.php?action=update',
+      destroy:  '/resources/customer.php?action=destroy'
     },
     reader: {
       type: 'json'

@@ -7,44 +7,28 @@ Ext.define('App.view.ViewportController', {
   },
 
   onDeleteCustomer: function(button){
-    console.log('Delete test');
-
     var form    = button.up('form'),  
         record  = form.getRecord();
 
-        if(record){
-          Ext.Msg.alert('Delete', 'Customer ID ' + record.get('id'));
-          // Refer to getStore of CustomerStore but with delete action trigger
-
-          record.erase('id');
-
-        }else{
-          Ext.Msg.alert('Success', 'No Customer selected');
-        }
-
-        
-
+    if(record){
+      record.drop();
+      Ext.Msg.alert('Delete', 'Customer ID ' + record.get('id'));
+    } else {
+      Ext.Msg.alert('Warning', 'No Customer selected');
+    }
   },
 
   onSaveCustomer: function(button) {
     var form    = button.up('form'),  
         record  = form.getRecord();
+        values  = form.getValues();
 
-    form.submit({
-      success: function() {
-        console.log(record);
-        if(record) {
-          Ext.Msg.alert('Success', 'Customer <b>' + record.get('name') + '</b> has been updated.');
-          
-        } else {
-          Ext.Msg.alert('Success', 'A new customer has been added.');
-          form.reset();
-        }
-        Ext.getStore("CustomerStore").reload();
-      },
-      failure: function(form, action) {
-        Ext.Msg.alert('Failure', 'Something wrong');
-      }
-    });
-  }
+    if(record) {
+      record.set(values);
+      Ext.Msg.alert('Success', 'Customer <b>' + record.get('name') + '</b> has been updated.');
+    } else {
+      Ext.getStore("CustomerStore").add(values);
+      Ext.Msg.alert('Success', 'A new customer has been added.');
+      form.reset();
+    }
 });
