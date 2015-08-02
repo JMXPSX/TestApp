@@ -31,4 +31,5 @@ Ext.define('App.view.ViewportController', {
       Ext.Msg.alert('Success', 'A new customer has been added.');
       form.reset();
     }
+  }
 });
