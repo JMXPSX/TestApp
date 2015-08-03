@@ -30,7 +30,7 @@
   $post = file_get_contents('php://input');
   if($post) {
     $data = json_decode($post, true);
-    var_dump();
+//    var_dump();
     switch ($_GET['action']) {
       
       case 'create':
