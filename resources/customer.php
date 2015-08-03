@@ -35,9 +35,7 @@
       
       case 'create':
         mysql_query("INSERT INTO `customer` (`name`, `company`, `email`, `phone`, `mobile`) VALUES ('{$data['name']}', '{$data['company']}', '{$data['email']}', '{$data['phone']}', '{$data['mobile']}')");
-
-        
-
+      
         break;
       
       case 'update':
@@ -49,18 +47,13 @@
         $fields = substr($fields, 2);
         mysql_query("UPDATE `customer` SET {$fields} WHERE `cid` = {$data['id']}");
 
-       
-
         break;
       
       case 'destroy':
-        echo "id = " . $data['id'];
+        //echo "id = " . $data['id'];
         mysql_query("DELETE FROM `customer` WHERE `cid` = {$data['id']}");
-
         
-
         break;
-
 
 
     }   
