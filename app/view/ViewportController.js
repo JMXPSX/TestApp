@@ -13,6 +13,7 @@ Ext.define('App.view.ViewportController', {
     if(record){
       record.drop();
       Ext.Msg.alert('Delete', 'Customer ID ' + record.get('id'));
+      form.reset();
     } else {
       Ext.Msg.alert('Warning', 'No Customer selected');
     }
@@ -31,4 +32,5 @@ Ext.define('App.view.ViewportController', {
       Ext.Msg.alert('Success', 'A new customer has been added.');
       form.reset();
     }
+  }
 });

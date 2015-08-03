@@ -9,7 +9,7 @@ Ext.define('App.view.Viewport', {
   
   items: [{
     xtype: 'form',
-    url: '/resources/customer.php',
+    url: '/TestApp/resources/customer.php',
     title: 'Web Application',
     width: 500,      
     bodyPadding: 10,
