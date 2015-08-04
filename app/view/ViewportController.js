@@ -13,7 +13,8 @@ Ext.define('App.view.ViewportController', { // Controller for the Viewport.js - 
     if(record){ // if record exists
       record.drop(); // http://localhost/extjs-docs-5.1.1/#!/api/Ext.data.Model-method-drop - data deleted on store class
       Ext.Msg.alert('Delete', 'Customer ID ' + record.get('id')); // alert message saying the id of the customer to be deleted.
-      form.reset(); // http://localhost/extjs-docs-5.1.1/#!/api/Ext.form.Panel with method reset
+      form.reset(true); // http://localhost/extjs-docs-5.1.1/#!/api/Ext.form.Panel with method reset
+
     } else { // if record does not exists
       Ext.Msg.alert('Warning', 'No Customer selected'); // alert message saying no customer was selected - http://localhost/extjs-docs-5.1.1/#!/api/Ext.MessageBox
     }
