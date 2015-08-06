@@ -6,11 +6,11 @@ Ext.define('App.store.CustomerStore', {
   autoSync: true,
   proxy: {
     type: 'ajax',
-    url: '/TestApp/resources/customer.php',
+    url: '/resources/customer.php',
     api: {
-      create:   '/TestApp/resources/customer.php?action=create',         
-      update:   '/TestApp/resources/customer.php?action=update',
-      destroy:  '/TestApp/resources/customer.php?action=destroy'
+      create:   '/resources/customer.php?action=create',         
+      update:   '/resources/customer.php?action=update',
+      destroy:  '/resources/customer.php?action=destroy'
     },
     reader: {
       type: 'json',

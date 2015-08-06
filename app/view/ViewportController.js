@@ -9,11 +9,28 @@ Ext.define('App.view.ViewportController', { // Controller for the Viewport.js - 
   onDeleteCustomer: function(button){ // http://localhost/extjs-docs-5.1.1/#!/api/Ext.button.Button - Delete button on Viewport.js inside form
     var form    = button.up('form'),  // http://localhost/extjs-docs-5.1.1/#!/api/Ext.Component-method-up - gets the container name 'form'
         record  = form.getRecord(); // http://localhost/extjs-docs-5.1.1/#!/api/Ext.form.Panel with getRecord method
+        values  = form.getValues();
 
     if(record){ // if record exists
       record.drop(); // http://localhost/extjs-docs-5.1.1/#!/api/Ext.data.Model-method-drop - data deleted on store class
       Ext.Msg.alert('Delete', 'Customer ID ' + record.get('id')); // alert message saying the id of the customer to be deleted.
-      form.reset(true); // http://localhost/extjs-docs-5.1.1/#!/api/Ext.form.Panel with method reset
+     
+      console.log(1);
+
+      var name_Combobox = Ext.getCmp('name_Combobox'),
+      company_textField = Ext.getCmp('company_textField'),
+      email_textField = Ext.getCmp('email_textField'),
+      phone_textField = Ext.getCmp('phone_textField'),
+      mobile_textField = Ext.getCmp('mobile_textField'),
+      hidden_textfield = Ext.getCmp('hidden_textfield');       
+
+      company_textField.reset();
+      email_textField.reset();
+      phone_textField.reset();
+      mobile_textField.reset();
+      hidden_textfield.reset();
+
+      name_Combobox.setRawValue('');   
 
     } else { // if record does not exists
       Ext.Msg.alert('Warning', 'No Customer selected'); // alert message saying no customer was selected - http://localhost/extjs-docs-5.1.1/#!/api/Ext.MessageBox

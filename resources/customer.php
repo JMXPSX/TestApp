@@ -54,8 +54,7 @@
 
         break;
       
-      case 'destroy':
-        
+      case 'destroy':        
         mysql_query("DELETE FROM `customer` WHERE `cid` = {$data['id']}");
         
         break;
